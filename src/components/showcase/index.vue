@@ -8,6 +8,8 @@ import Repeater from './Repeater.vue'
 import Taglist from './Taglist.vue'
 import Toggle from './Toggle.vue'
 
+import { Button as AntButton, Space as AntSpace } from 'ant-design-vue'
+
 const inputTypes = [
     'button',
     'checkbox',
@@ -110,4 +112,12 @@ const inputOptions = {
         <Toggle />
         <Transferlist />
     </FormKit>
+
+    <AntSpace wrap>
+        <AntButton type="primary">Primary Button</AntButton>
+        <AntButton>Default Button</AntButton>
+        <AntButton type="dashed">Dashed Button</AntButton>
+        <AntButton type="text">Text Button</AntButton>
+        <AntButton type="link">Link Button</AntButton>
+    </AntSpace>
 </template>
