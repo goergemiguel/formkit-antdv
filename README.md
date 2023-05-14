@@ -10,7 +10,7 @@ This library is an experiment and is in-progress. It combines usage of formkit s
 -   [x] Handle two-way binding of components (capture user input, render value)
 -   [x] Support ALL Ant Design props in formkit schema
 -   [x] Handle custom events of Ant design components
--   [ ] Sync formkit validation and ant design component error state, show red borders when validation fails
+-   [x] Sync formkit validation and ant design component error state, show red borders when validation fails
 -   [ ] Continue adding other ant design components to library definition
 -   [ ] Try modifying ant design tokens and see if it causes any issues.
 -   [ ] More comprehensive form examples

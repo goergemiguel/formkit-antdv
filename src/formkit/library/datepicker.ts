@@ -10,10 +10,16 @@ export default {
             $cmp: AntDatePicker,
             bind: '$antProps',
             props: {
+                class: 'w-full',
                 onChange: '$handlers.simpleInput',
                 value: '$_value',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
+                status: {
+                    if: '$fns.length($messages) > 0',
+                    then: 'error',
+                    else: '',
+                },
             },
         },
     ]),

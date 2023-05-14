@@ -15,6 +15,11 @@ export default {
                 class: 'w-full',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
+                status: {
+                    if: '$fns.length($messages) > 0',
+                    then: 'error',
+                    else: '',
+                },
             },
         },
     ]),

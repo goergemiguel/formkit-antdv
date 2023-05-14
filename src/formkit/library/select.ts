@@ -14,6 +14,11 @@ export default {
                 value: '$_value',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
+                status: {
+                    if: '$fns.length($messages) > 0',
+                    then: 'error',
+                    else: '',
+                },
             },
             bind: '$antProps',
         },
