@@ -21,7 +21,7 @@ export const outerDiv = {
 export const wrapperDiv = {
     $el: 'div',
     attrs: {
-        class: '$classes.wrapper',
+        class: '$classes.wrapper flex flex-col',
     },
     children: [],
 }

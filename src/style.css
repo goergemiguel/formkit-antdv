@@ -9,3 +9,7 @@
 .ant-btn-primary:not([disabled]) {
     @apply bg-blue-500;
 }
+
+.ant-switch {
+    @apply bg-gray-500;
+}

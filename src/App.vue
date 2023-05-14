@@ -1,18 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const form = ref({
-    firstName: 'Joji',
-    selectedSingleCheckbox: true,
-    selectedGroupCheckbox: 'group_2',
-})
-
-const horizontalLine = {
-    $el: 'hr',
-    attrs: {
-        class: 'text-gray-100 my-8',
-    },
-}
+const form = ref({})
 
 const schema = [
     {
@@ -21,19 +10,21 @@ const schema = [
         name: 'firstName',
         help: 'The persons first name',
     },
-    horizontalLine,
     {
-        $formkit: 'button',
-        label: 'Default Button',
+        $formkit: 'number',
+        label: 'Salary',
+        name: 'salary',
+        help: 'Salary per month',
     },
     {
-        $formkit: 'button',
-        label: 'Primary Button',
-        antProps: {
-            type: 'primary',
-        },
+        $formkit: 'password',
+        label: 'Password',
+        name: 'password',
+        help: 'Choose a secure password',
     },
-    horizontalLine,
+    {
+        $formkit: 'divider',
+    },
     {
         $formkit: 'checkbox',
         name: 'selectedSingleCheckbox',
@@ -51,7 +42,9 @@ const schema = [
             ],
         },
     },
-    horizontalLine,
+    {
+        $formkit: 'divider',
+    },
     {
         $formkit: 'datepicker',
         name: 'dateOfBirth',
@@ -61,7 +54,9 @@ const schema = [
             format: 'DD/MM/YYYY',
         },
     },
-    horizontalLine,
+    {
+        $formkit: 'divider',
+    },
     {
         $formkit: 'textarea',
         name: 'selfDescription',
@@ -71,7 +66,9 @@ const schema = [
             rows: 5,
         },
     },
-    horizontalLine,
+    {
+        $formkit: 'divider',
+    },
     {
         $formkit: 'select',
         name: 'favouriteFood',
@@ -85,7 +82,9 @@ const schema = [
             ],
         },
     },
-    horizontalLine,
+    {
+        $formkit: 'divider',
+    },
     {
         $formkit: 'radio',
         name: 'selectedRadio',
@@ -111,20 +110,42 @@ const schema = [
             ],
         },
     },
-    horizontalLine,
+    {
+        $formkit: 'divider',
+    },
     {
         $formkit: 'toggle',
         name: 'isResidentInHongKong',
         label: 'Resident of Hong Kong?',
     },
+    {
+        $formkit: 'divider',
+    },
+    {
+        $formkit: 'button',
+        label: 'Default Button',
+    },
+    {
+        $formkit: 'button',
+        label: 'Primary Button',
+        antProps: {
+            type: 'primary',
+        },
+    },
 ]
 </script>
 
 <template>
-    {{ form }}
     <div class="max-w-lg mx-auto py-8">
-        <FormKit type="form" v-model="form">
-            <FormKitSchema :schema="schema" />
-        </FormKit>
+        <div class="col-span-2">
+            <FormKit type="form" v-model="form" :actions="false">
+                <FormKitSchema :schema="schema" />
+            </FormKit>
+        </div>
+        <div class="fixed top-0 right-0 bg-gray-50 h-full p-4 text-xs">
+            <code>
+                <pre>{{ form }}</pre>
+            </code>
+        </div>
     </div>
 </template>
