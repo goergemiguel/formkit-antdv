@@ -2,6 +2,6 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import { plugin } from '@formkit/vue'
-import formkitConfig from '../formkit.config.js'
+import formkitConfig from './formkit.ts'
 
 createApp(App).use(plugin, formkitConfig).mount('#app')

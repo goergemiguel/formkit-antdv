@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import Autocomplete from './Autocomplete.vue'
-import Datepicker from './Datepicker.vue'
-import Dropdown from './Dropdown.vue'
-import Mask from './Mask.vue'
-import Rating from './Rating.vue'
-import Repeater from './Repeater.vue'
-import Taglist from './Taglist.vue'
-import Toggle from './Toggle.vue'
-
-import { Button as AntButton, Space as AntSpace } from 'ant-design-vue'
+import Autocomplete from '@/components/showcase/formkit/Autocomplete.vue'
+import Datepicker from '@/components/showcase/formkit/Datepicker.vue'
+import Dropdown from '@/components/showcase/formkit/Dropdown.vue'
+import Mask from '@/components/showcase/formkit/Mask.vue'
+import Rating from '@/components/showcase/formkit/Rating.vue'
+import Repeater from '@/components/showcase/formkit/Repeater.vue'
+import Taglist from '@/components/showcase/formkit/Taglist.vue'
+import Toggle from '@/components/showcase/formkit/Toggle.vue'
 
 const inputTypes = [
     'button',
@@ -113,11 +111,5 @@ const inputOptions = {
         <Transferlist />
     </FormKit>
 
-    <AntSpace wrap>
-        <AntButton type="primary">Primary Button</AntButton>
-        <AntButton>Default Button</AntButton>
-        <AntButton type="dashed">Dashed Button</AntButton>
-        <AntButton type="text">Text Button</AntButton>
-        <AntButton type="link">Link Button</AntButton>
-    </AntSpace>
+    <hr class="text-gray-100 my-8" />
 </template>
