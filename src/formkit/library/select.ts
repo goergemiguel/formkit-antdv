@@ -31,6 +31,8 @@ export default {
                         class: 'w-full',
                         onChange: '$handlers.handleChange',
                         value: '$_value',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
                     bind: '$antProps',
                 },

@@ -32,6 +32,8 @@ export default {
                         onChange: '$handlers.handleChange',
                         value: '$_value',
                         class: 'w-full',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
                 },
             ],

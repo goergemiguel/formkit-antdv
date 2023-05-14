@@ -62,7 +62,7 @@ export const errorMessages = {
             $el: 'li',
             for: ['message', '$messages'],
             attrs: {
-                class: '$classes.message pl-2',
+                class: '$classes.message',
             },
             children: '$message.value',
         },

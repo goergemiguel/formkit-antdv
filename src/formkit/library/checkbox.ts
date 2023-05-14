@@ -2,7 +2,7 @@ import {
     Checkbox as AntCheckbox,
     CheckboxGroup as AntCheckboxGroup,
 } from 'ant-design-vue'
-import { withOuterWrapperDivs, innerDiv } from './core'
+import { withOuterWrapperDivs, innerDiv, helpText, errorMessages } from './core'
 
 function customHandler(node) {
     node.on('created', () => {
@@ -33,6 +33,8 @@ export default {
                         props: {
                             onChange: '$handlers.handleGroupChange',
                             value: '$_value',
+                            onBlur: '$handlers.blur',
+                            onFocus: '$handlers.touch',
                         },
                     },
                 ],
@@ -44,11 +46,15 @@ export default {
                         props: {
                             onChange: '$handlers.handleSingleChange',
                             checked: '$_value',
+                            onBlur: '$handlers.blur',
+                            onFocus: '$handlers.touch',
                         },
                     },
                 ],
             },
         },
+        helpText,
+        errorMessages,
     ]),
     features: [customHandler],
 }

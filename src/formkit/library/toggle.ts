@@ -31,6 +31,8 @@ export default {
                     props: {
                         onChange: '$handlers.handleChange',
                         checked: '$_value',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
                 },
             ],

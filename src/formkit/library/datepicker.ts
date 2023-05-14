@@ -32,6 +32,8 @@ export default {
                     props: {
                         onChange: '$handlers.handleChangeDate',
                         value: '$_value',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
                 },
             ],

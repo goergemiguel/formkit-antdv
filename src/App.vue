@@ -9,18 +9,21 @@ const schema = [
         label: 'First Name',
         name: 'firstName',
         help: 'The persons first name',
+        validation: 'required',
     },
     {
         $formkit: 'number',
         label: 'Salary',
         name: 'salary',
         help: 'Salary per month',
+        validation: 'required',
     },
     {
         $formkit: 'password',
         label: 'Password',
         name: 'password',
         help: 'Choose a secure password',
+        validation: 'required',
     },
     {
         $formkit: 'divider',
@@ -29,6 +32,7 @@ const schema = [
         $formkit: 'checkbox',
         name: 'selectedSingleCheckbox',
         label: 'Single Checkbox',
+        validation: 'required',
     },
     {
         $formkit: 'checkbox',
@@ -40,6 +44,11 @@ const schema = [
                 { label: 'Group 2', value: 'group_2' },
                 { label: 'Group 3', value: 'group_3' },
             ],
+        },
+        validation: 'min:2',
+        validationVisibility: 'live',
+        validationMessages: {
+            min: 'Please select at least 2 group',
         },
     },
     {
@@ -53,6 +62,7 @@ const schema = [
         antProps: {
             format: 'DD/MM/YYYY',
         },
+        validation: 'required',
     },
     {
         $formkit: 'divider',
@@ -65,6 +75,7 @@ const schema = [
         antProps: {
             rows: 5,
         },
+        validation: 'required',
     },
     {
         $formkit: 'divider',
@@ -81,6 +92,7 @@ const schema = [
                 { label: 'Beef Stew', value: 'beef_stew' },
             ],
         },
+        validation: 'required',
     },
     {
         $formkit: 'divider',
@@ -96,6 +108,7 @@ const schema = [
                 { label: 'Group 3', value: 'group_3' },
             ],
         },
+        validation: 'required',
     },
     {
         $formkit: 'radio',
@@ -109,6 +122,7 @@ const schema = [
                 { label: 'Group 3', value: 'group_3' },
             ],
         },
+        validation: 'required',
     },
     {
         $formkit: 'divider',
@@ -117,6 +131,7 @@ const schema = [
         $formkit: 'toggle',
         name: 'isResidentInHongKong',
         label: 'Resident of Hong Kong?',
+        validation: 'required',
     },
     {
         $formkit: 'divider',

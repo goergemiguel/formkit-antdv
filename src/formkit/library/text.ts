@@ -21,6 +21,8 @@ export default {
                     props: {
                         onChange: '$handlers.DOMInput',
                         value: '$_value',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
                 },
             ],

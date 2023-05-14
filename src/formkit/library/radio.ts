@@ -1,5 +1,5 @@
 import { RadioGroup as AntRadioGroup } from 'ant-design-vue'
-import { withOuterWrapperDivs, innerDiv, labelText } from './core'
+import { withOuterWrapperDivs, innerDiv, helpText, errorMessages } from './core'
 
 export default {
     type: 'input',
@@ -15,9 +15,13 @@ export default {
                     props: {
                         onChange: '$handlers.DOMInput',
                         value: '$_value',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
                 },
             ],
         },
+        helpText,
+        errorMessages,
     ]),
 }
