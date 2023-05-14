@@ -3,19 +3,7 @@ import {
     CheckboxGroup as AntCheckboxGroup,
 } from 'ant-design-vue'
 import { withDefaultFormKitSchema } from './utils'
-
-function customHandler(node) {
-    node.on('created', () => {
-        Object.assign(node.context.handlers, {
-            handleSingleChange: (e) => {
-                node.input(!node.value)
-            },
-            handleGroupChange: (e) => {
-                node.input(e)
-            },
-        })
-    })
-}
+import { customAntInputHandlers } from './handlers'
 
 export default {
     type: 'input',
@@ -29,7 +17,7 @@ export default {
                     children: ['$label'],
                     bind: '$antProps',
                     props: {
-                        onChange: '$handlers.handleGroupChange',
+                        onChange: '$handlers.simpleInput',
                         value: '$_value',
                         onBlur: '$handlers.blur',
                         onFocus: '$handlers.touch',
@@ -42,7 +30,7 @@ export default {
                     children: ['$label'],
                     bind: '$antProps',
                     props: {
-                        onChange: '$handlers.handleSingleChange',
+                        onChange: '$handlers.toggleInput',
                         checked: '$_value',
                         onBlur: '$handlers.blur',
                         onFocus: '$handlers.touch',
@@ -54,5 +42,5 @@ export default {
             showLabel: false,
         }
     ),
-    features: [customHandler],
+    features: [customAntInputHandlers],
 }

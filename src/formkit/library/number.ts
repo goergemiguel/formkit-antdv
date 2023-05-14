@@ -1,15 +1,6 @@
 import { InputNumber as AntInputNumber } from 'ant-design-vue'
 import { withDefaultFormKitSchema } from './utils'
-
-function customHandler(node) {
-    node.on('created', () => {
-        Object.assign(node.context.handlers, {
-            handleChange: (e) => {
-                node.input(e)
-            },
-        })
-    })
-}
+import { customAntInputHandlers } from './handlers'
 
 export default {
     type: 'input',
@@ -19,7 +10,7 @@ export default {
             $cmp: AntInputNumber,
             bind: '$antProps',
             props: {
-                onChange: '$handlers.handleChange',
+                onChange: '$handlers.simpleInput',
                 value: '$_value',
                 class: 'w-full',
                 onBlur: '$handlers.blur',
@@ -27,5 +18,5 @@ export default {
             },
         },
     ]),
-    features: [customHandler],
+    features: [customAntInputHandlers],
 }

@@ -1,15 +1,6 @@
 import { Select as AntSelect } from 'ant-design-vue'
 import { withDefaultFormKitSchema } from './utils'
-
-function customHandler(node) {
-    node.on('created', () => {
-        Object.assign(node.context.handlers, {
-            handleChange: (e) => {
-                node.input(e)
-            },
-        })
-    })
-}
+import { customAntInputHandlers } from './handlers'
 
 export default {
     type: 'input',
@@ -19,7 +10,7 @@ export default {
             $cmp: AntSelect,
             props: {
                 class: 'w-full',
-                onChange: '$handlers.handleChange',
+                onChange: '$handlers.simpleInput',
                 value: '$_value',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
@@ -27,5 +18,5 @@ export default {
             bind: '$antProps',
         },
     ]),
-    features: [customHandler],
+    features: [customAntInputHandlers],
 }

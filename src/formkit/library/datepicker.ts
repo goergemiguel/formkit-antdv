@@ -1,16 +1,6 @@
 import { DatePicker as AntDatePicker } from 'ant-design-vue'
-
 import { withDefaultFormKitSchema } from './utils'
-
-function customHandler(node) {
-    node.on('created', () => {
-        Object.assign(node.context.handlers, {
-            handleChangeDate: (e) => {
-                node.input(e)
-            },
-        })
-    })
-}
+import { customAntInputHandlers } from './handlers'
 
 export default {
     type: 'input',
@@ -20,12 +10,12 @@ export default {
             $cmp: AntDatePicker,
             bind: '$antProps',
             props: {
-                onChange: '$handlers.handleChangeDate',
+                onChange: '$handlers.simpleInput',
                 value: '$_value',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
             },
         },
     ]),
-    features: [customHandler],
+    features: [customAntInputHandlers],
 }
