@@ -13,9 +13,9 @@ const schema = [
     },
     {
         $formkit: 'number',
-        label: 'Salary',
-        name: 'salary',
-        help: 'Salary per month',
+        label: 'How many cups of water?',
+        name: 'cupsOfWater',
+        help: 'Cups of water you drink in a day',
         validation: 'required',
     },
     {
@@ -30,25 +30,25 @@ const schema = [
     },
     {
         $formkit: 'checkbox',
-        name: 'selectedSingleCheckbox',
-        label: 'Single Checkbox',
+        name: 'isLoveFormKit',
+        label: 'I Love Formkit',
         validation: 'required',
     },
     {
         $formkit: 'checkbox',
-        name: 'selectedGroupCheckbox',
+        name: 'selectedFruit',
         label: 'Group Checkbox',
         antProps: {
             options: [
-                { label: 'Group 1', value: 'group_1' },
-                { label: 'Group 2', value: 'group_2' },
-                { label: 'Group 3', value: 'group_3' },
+                { label: 'Apples', value: 'apples' },
+                { label: 'Oranges', value: 'oranges' },
+                { label: 'Bananas', value: 'bananas' },
             ],
         },
         validation: 'min:2',
         validationVisibility: 'live',
         validationMessages: {
-            min: 'Please select at least 2 group',
+            min: 'Please select at least 2 fruits',
         },
     },
     {
@@ -56,42 +56,42 @@ const schema = [
     },
     {
         $formkit: 'radio',
-        name: 'selectedRadio',
+        name: 'favouriteFramework',
         label: 'Radio',
         antProps: {
             options: [
-                { label: 'Group 1', value: 'group_1' },
-                { label: 'Group 2', value: 'group_2' },
-                { label: 'Group 3', value: 'group_3' },
+                { label: 'Vue', value: 'vue' },
+                { label: 'React', value: 'react' },
+                { label: 'Svelte', value: 'svelte' },
             ],
         },
         validation: 'required',
     },
     {
         $formkit: 'radio',
-        name: 'selectedRadio2',
-        label: 'Group Radio',
+        name: 'favouriteNBATeam',
+        label: 'Favourite NBA Team',
         antProps: {
             optionType: 'button',
             options: [
-                { label: 'Group 1', value: 'group_1' },
-                { label: 'Group 2', value: 'group_2' },
-                { label: 'Group 3', value: 'group_3' },
+                { label: 'LA Lakers', value: 'LAL' },
+                { label: 'Chicago Bulls', value: 'CHI' },
+                { label: 'Golden State Warriors', value: 'GSW' },
             ],
         },
         validation: 'required',
     },
     {
         $formkit: 'radio',
-        name: 'selectedRadio3',
+        name: 'chosenLocation',
         label: 'Group Radio',
         antProps: {
             optionType: 'button',
             buttonStyle: 'solid',
             options: [
-                { label: 'Group 1', value: 'group_1' },
-                { label: 'Group 2', value: 'group_2' },
-                { label: 'Group 3', value: 'group_3' },
+                { label: 'Hong Kong', value: 'hong_kong' },
+                { label: 'Philippines', value: 'philippines' },
+                { label: 'Vietnam', value: 'vietnam' },
             ],
         },
         validation: 'required',
