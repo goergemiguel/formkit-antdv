@@ -55,6 +55,51 @@ const schema = [
         $formkit: 'divider',
     },
     {
+        $formkit: 'radio',
+        name: 'selectedRadio',
+        label: 'Radio',
+        antProps: {
+            options: [
+                { label: 'Group 1', value: 'group_1' },
+                { label: 'Group 2', value: 'group_2' },
+                { label: 'Group 3', value: 'group_3' },
+            ],
+        },
+        validation: 'required',
+    },
+    {
+        $formkit: 'radio',
+        name: 'selectedRadio2',
+        label: 'Group Radio',
+        antProps: {
+            optionType: 'button',
+            options: [
+                { label: 'Group 1', value: 'group_1' },
+                { label: 'Group 2', value: 'group_2' },
+                { label: 'Group 3', value: 'group_3' },
+            ],
+        },
+        validation: 'required',
+    },
+    {
+        $formkit: 'radio',
+        name: 'selectedRadio3',
+        label: 'Group Radio',
+        antProps: {
+            optionType: 'button',
+            buttonStyle: 'solid',
+            options: [
+                { label: 'Group 1', value: 'group_1' },
+                { label: 'Group 2', value: 'group_2' },
+                { label: 'Group 3', value: 'group_3' },
+            ],
+        },
+        validation: 'required',
+    },
+    {
+        $formkit: 'divider',
+    },
+    {
         $formkit: 'datepicker',
         name: 'dateOfBirth',
         label: 'Date of Birth',
@@ -90,36 +135,6 @@ const schema = [
                 { label: 'Chicken Wings', value: 'chicken_wings' },
                 { label: 'Spaghetti', value: 'spaghetti' },
                 { label: 'Beef Stew', value: 'beef_stew' },
-            ],
-        },
-        validation: 'required',
-    },
-    {
-        $formkit: 'divider',
-    },
-    {
-        $formkit: 'radio',
-        name: 'selectedRadio',
-        label: 'Radio',
-        antProps: {
-            options: [
-                { label: 'Group 1', value: 'group_1' },
-                { label: 'Group 2', value: 'group_2' },
-                { label: 'Group 3', value: 'group_3' },
-            ],
-        },
-        validation: 'required',
-    },
-    {
-        $formkit: 'radio',
-        name: 'selectedRadio2',
-        label: 'Group Radio',
-        antProps: {
-            optionType: 'button',
-            options: [
-                { label: 'Group 1', value: 'group_1' },
-                { label: 'Group 2', value: 'group_2' },
-                { label: 'Group 3', value: 'group_3' },
             ],
         },
         validation: 'required',

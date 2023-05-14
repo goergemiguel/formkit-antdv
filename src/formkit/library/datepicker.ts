@@ -1,12 +1,6 @@
 import { DatePicker as AntDatePicker } from 'ant-design-vue'
-import dayjs from 'dayjs'
-import {
-    withOuterWrapperDivs,
-    innerDiv,
-    labelText,
-    helpText,
-    errorMessages,
-} from './core'
+
+import { withDefaultFormKitSchema } from './utils'
 
 function customHandler(node) {
     node.on('created', () => {
@@ -21,25 +15,17 @@ function customHandler(node) {
 export default {
     type: 'input',
     props: ['label', 'antProps'],
-    schema: withOuterWrapperDivs([
-        labelText,
+    schema: withDefaultFormKitSchema([
         {
-            ...innerDiv,
-            children: [
-                {
-                    $cmp: AntDatePicker,
-                    bind: '$antProps',
-                    props: {
-                        onChange: '$handlers.handleChangeDate',
-                        value: '$_value',
-                        onBlur: '$handlers.blur',
-                        onFocus: '$handlers.touch',
-                    },
-                },
-            ],
+            $cmp: AntDatePicker,
+            bind: '$antProps',
+            props: {
+                onChange: '$handlers.handleChangeDate',
+                value: '$_value',
+                onBlur: '$handlers.blur',
+                onFocus: '$handlers.touch',
+            },
         },
-        helpText,
-        errorMessages,
     ]),
     features: [customHandler],
 }

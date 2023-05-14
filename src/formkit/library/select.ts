@@ -1,11 +1,5 @@
 import { Select as AntSelect } from 'ant-design-vue'
-import {
-    withOuterWrapperDivs,
-    innerDiv,
-    labelText,
-    helpText,
-    errorMessages,
-} from './core'
+import { withDefaultFormKitSchema } from './utils'
 
 function customHandler(node) {
     node.on('created', () => {
@@ -20,26 +14,18 @@ function customHandler(node) {
 export default {
     type: 'input',
     props: ['label', 'antProps'],
-    schema: withOuterWrapperDivs([
-        labelText,
+    schema: withDefaultFormKitSchema([
         {
-            ...innerDiv,
-            children: [
-                {
-                    $cmp: AntSelect,
-                    props: {
-                        class: 'w-full',
-                        onChange: '$handlers.handleChange',
-                        value: '$_value',
-                        onBlur: '$handlers.blur',
-                        onFocus: '$handlers.touch',
-                    },
-                    bind: '$antProps',
-                },
-            ],
+            $cmp: AntSelect,
+            props: {
+                class: 'w-full',
+                onChange: '$handlers.handleChange',
+                value: '$_value',
+                onBlur: '$handlers.blur',
+                onFocus: '$handlers.touch',
+            },
+            bind: '$antProps',
         },
-        helpText,
-        errorMessages,
     ]),
     features: [customHandler],
 }

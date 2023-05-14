@@ -1,33 +1,19 @@
 import { Input as AntInput } from 'ant-design-vue'
-import {
-    withOuterWrapperDivs,
-    innerDiv,
-    labelText,
-    helpText,
-    errorMessages,
-} from './core'
+import { withDefaultFormKitSchema } from './utils'
 
 export default {
     type: 'input',
     props: ['label', 'antProps'],
-    schema: withOuterWrapperDivs([
-        labelText,
+    schema: withDefaultFormKitSchema([
         {
-            ...innerDiv,
-            children: [
-                {
-                    $cmp: AntInput,
-                    bind: '$antProps',
-                    props: {
-                        onChange: '$handlers.DOMInput',
-                        value: '$_value',
-                        onBlur: '$handlers.blur',
-                        onFocus: '$handlers.touch',
-                    },
-                },
-            ],
+            $cmp: AntInput,
+            bind: '$antProps',
+            props: {
+                onChange: '$handlers.DOMInput',
+                value: '$_value',
+                onBlur: '$handlers.blur',
+                onFocus: '$handlers.touch',
+            },
         },
-        helpText,
-        errorMessages,
     ]),
 }

@@ -1,11 +1,5 @@
 import { InputNumber as AntInputNumber } from 'ant-design-vue'
-import {
-    withOuterWrapperDivs,
-    innerDiv,
-    labelText,
-    helpText,
-    errorMessages,
-} from './core'
+import { withDefaultFormKitSchema } from './utils'
 
 function customHandler(node) {
     node.on('created', () => {
@@ -20,26 +14,18 @@ function customHandler(node) {
 export default {
     type: 'input',
     props: ['label', 'antProps'],
-    schema: withOuterWrapperDivs([
-        labelText,
+    schema: withDefaultFormKitSchema([
         {
-            ...innerDiv,
-            children: [
-                {
-                    $cmp: AntInputNumber,
-                    bind: '$antProps',
-                    props: {
-                        onChange: '$handlers.handleChange',
-                        value: '$_value',
-                        class: 'w-full',
-                        onBlur: '$handlers.blur',
-                        onFocus: '$handlers.touch',
-                    },
-                },
-            ],
+            $cmp: AntInputNumber,
+            bind: '$antProps',
+            props: {
+                onChange: '$handlers.handleChange',
+                value: '$_value',
+                class: 'w-full',
+                onBlur: '$handlers.blur',
+                onFocus: '$handlers.touch',
+            },
         },
-        helpText,
-        errorMessages,
     ]),
     features: [customHandler],
 }

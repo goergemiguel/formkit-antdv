@@ -2,7 +2,7 @@ import {
     Checkbox as AntCheckbox,
     CheckboxGroup as AntCheckboxGroup,
 } from 'ant-design-vue'
-import { withOuterWrapperDivs, innerDiv, helpText, errorMessages } from './core'
+import { withDefaultFormKitSchema } from './utils'
 
 function customHandler(node) {
     node.on('created', () => {
@@ -20,41 +20,39 @@ function customHandler(node) {
 export default {
     type: 'input',
     props: ['label', 'options', 'antProps'],
-    schema: withOuterWrapperDivs([
+    schema: withDefaultFormKitSchema(
         {
-            ...innerDiv,
-            children: {
-                if: '$antProps.options',
-                then: [
-                    {
-                        $cmp: AntCheckboxGroup,
-                        children: ['$label'],
-                        bind: '$antProps',
-                        props: {
-                            onChange: '$handlers.handleGroupChange',
-                            value: '$_value',
-                            onBlur: '$handlers.blur',
-                            onFocus: '$handlers.touch',
-                        },
+            if: '$antProps.options',
+            then: [
+                {
+                    $cmp: AntCheckboxGroup,
+                    children: ['$label'],
+                    bind: '$antProps',
+                    props: {
+                        onChange: '$handlers.handleGroupChange',
+                        value: '$_value',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
-                ],
-                else: [
-                    {
-                        $cmp: AntCheckbox,
-                        children: ['$label'],
-                        bind: '$antProps',
-                        props: {
-                            onChange: '$handlers.handleSingleChange',
-                            checked: '$_value',
-                            onBlur: '$handlers.blur',
-                            onFocus: '$handlers.touch',
-                        },
+                },
+            ],
+            else: [
+                {
+                    $cmp: AntCheckbox,
+                    children: ['$label'],
+                    bind: '$antProps',
+                    props: {
+                        onChange: '$handlers.handleSingleChange',
+                        checked: '$_value',
+                        onBlur: '$handlers.blur',
+                        onFocus: '$handlers.touch',
                     },
-                ],
-            },
+                },
+            ],
         },
-        helpText,
-        errorMessages,
-    ]),
+        {
+            showLabel: false,
+        }
+    ),
     features: [customHandler],
 }
