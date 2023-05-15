@@ -36,13 +36,19 @@ This library is an experiment and is in-progress. It combines usage of formkit s
 
 ## Usage
 
-```
+Pre-requisite
+```javascript
 npm install @formkit/vue
+```
+
+Install package
+```
+npm install @goergemiguel/formkit-antdv
 ```
 
 main.ts
 
-```
+```typescript
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -62,7 +68,7 @@ createApp(App).use(plugin, config).mount('#app')
 
 tailwind.config.js
 
-```
+```javascript
 export default {
     content: [
         './index.html',
