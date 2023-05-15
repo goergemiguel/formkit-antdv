@@ -1,5 +1,5 @@
 import { Textarea as AntTextArea } from 'ant-design-vue'
-import { withDefaultFormKitSchema } from './utils'
+import { withDefaultFormKitSchema } from '../utils'
 
 export default {
     type: 'input',

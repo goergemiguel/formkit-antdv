@@ -1,16 +1,15 @@
-import { Select as AntSelect } from 'ant-design-vue'
-import { withDefaultFormKitSchema } from './utils'
-import { customAntInputHandlers } from './handlers'
+import { InputPassword as AntInputPassword } from 'ant-design-vue'
+import { withDefaultFormKitSchema } from '../utils'
 
 export default {
     type: 'input',
     props: ['label', 'antProps', 'required'],
     schema: withDefaultFormKitSchema([
         {
-            $cmp: AntSelect,
+            $cmp: AntInputPassword,
+            bind: '$antProps',
             props: {
-                class: '$classes.innerChild',
-                onChange: '$handlers.simpleInput',
+                onChange: '$handlers.DOMInput',
                 value: '$_value',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
@@ -20,8 +19,6 @@ export default {
                     else: '',
                 },
             },
-            bind: '$antProps',
         },
     ]),
-    features: [customAntInputHandlers],
 }

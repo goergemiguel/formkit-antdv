@@ -16,8 +16,9 @@ import {
     left,
     right,
 } from '@formkit/icons'
+
+import { inputs as customInputs } from './inputs'
 import theme from './theme'
-import library from './library/'
 
 const proPlugins = createProPlugin('fk-2ed9ffbc9', inputs)
 
@@ -44,7 +45,7 @@ const config = defaultConfig({
         left,
         right,
     },
-    inputs: library,
+    inputs: customInputs,
 })
 
 export default config

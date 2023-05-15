@@ -3,7 +3,7 @@
     "version": "0.0.3",
     "type": "module",
     "files": [
-        "./src/formkit/*"
+        "./lib/**/*"
     ],
     "scripts": {
         "dev": "vite",

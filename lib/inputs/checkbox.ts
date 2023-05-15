@@ -2,8 +2,8 @@ import {
     Checkbox as AntCheckbox,
     CheckboxGroup as AntCheckboxGroup,
 } from 'ant-design-vue'
-import { withDefaultFormKitSchema } from './utils'
-import { customAntInputHandlers } from './handlers'
+import { withDefaultFormKitSchema } from '../utils'
+import { customAntInputHandlers } from '../handlers'
 
 export default {
     type: 'input',

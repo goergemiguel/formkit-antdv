@@ -1,14 +1,13 @@
-import { InputNumber as AntInputNumber } from 'ant-design-vue'
-import { withDefaultFormKitSchema } from './utils'
-import { customAntInputHandlers } from './handlers'
+import { Select as AntSelect } from 'ant-design-vue'
+import { withDefaultFormKitSchema } from '../utils'
+import { customAntInputHandlers } from '../handlers'
 
 export default {
     type: 'input',
     props: ['label', 'antProps', 'required'],
     schema: withDefaultFormKitSchema([
         {
-            $cmp: AntInputNumber,
-            bind: '$antProps',
+            $cmp: AntSelect,
             props: {
                 class: '$classes.innerChild',
                 onChange: '$handlers.simpleInput',
@@ -21,6 +20,7 @@ export default {
                     else: '',
                 },
             },
+            bind: '$antProps',
         },
     ]),
     features: [customAntInputHandlers],

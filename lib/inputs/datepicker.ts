@@ -1,15 +1,17 @@
-import { Input as AntInput } from 'ant-design-vue'
-import { withDefaultFormKitSchema } from './utils'
+import { DatePicker as AntDatePicker } from 'ant-design-vue'
+import { withDefaultFormKitSchema } from '../utils'
+import { customAntInputHandlers } from '../handlers'
 
 export default {
     type: 'input',
     props: ['label', 'antProps', 'required'],
     schema: withDefaultFormKitSchema([
         {
-            $cmp: AntInput,
+            $cmp: AntDatePicker,
             bind: '$antProps',
             props: {
-                onChange: '$handlers.DOMInput',
+                class: 'w-full',
+                onChange: '$handlers.simpleInput',
                 value: '$_value',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
@@ -21,4 +23,5 @@ export default {
             },
         },
     ]),
+    features: [customAntInputHandlers],
 }

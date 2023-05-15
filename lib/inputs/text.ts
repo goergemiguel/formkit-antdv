@@ -1,12 +1,12 @@
-import { InputPassword as AntInputPassword } from 'ant-design-vue'
-import { withDefaultFormKitSchema } from './utils'
+import { Input as AntInput } from 'ant-design-vue'
+import { withDefaultFormKitSchema } from '../utils'
 
 export default {
     type: 'input',
     props: ['label', 'antProps', 'required'],
     schema: withDefaultFormKitSchema([
         {
-            $cmp: AntInputPassword,
+            $cmp: AntInput,
             bind: '$antProps',
             props: {
                 onChange: '$handlers.DOMInput',

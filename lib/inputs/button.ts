@@ -1,5 +1,5 @@
 import { Button as AntButton } from 'ant-design-vue'
-import { withDefaultFormKitSchema } from './utils'
+import { withDefaultFormKitSchema } from '../utils'
 
 export default {
     type: 'input',
