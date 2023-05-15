@@ -10,9 +10,9 @@ export default {
             $cmp: AntInputNumber,
             bind: '$antProps',
             props: {
+                class: '$classes.innerChild',
                 onChange: '$handlers.simpleInput',
                 value: '$_value',
-                class: 'w-full',
                 onBlur: '$handlers.blur',
                 onFocus: '$handlers.touch',
                 status: {

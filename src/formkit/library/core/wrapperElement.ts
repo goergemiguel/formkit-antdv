@@ -1,7 +1,7 @@
 export default {
     $el: 'div',
     attrs: {
-        class: '$classes.wrapper flex flex-col',
+        class: '$classes.wrapper',
     },
     children: [],
 }

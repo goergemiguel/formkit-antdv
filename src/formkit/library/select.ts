@@ -9,7 +9,7 @@ export default {
         {
             $cmp: AntSelect,
             props: {
-                class: 'w-full',
+                class: '$classes.innerChild',
                 onChange: '$handlers.simpleInput',
                 value: '$_value',
                 onBlur: '$handlers.blur',

@@ -6,7 +6,7 @@ export default {
     props: ['label', 'antProps'],
     schema: withDefaultFormKitSchema(
         {
-            if: '$antProps',
+            if: '$antProps.type',
             then: [
                 {
                     $cmp: AntButton,

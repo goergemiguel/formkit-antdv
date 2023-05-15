@@ -2,7 +2,7 @@ export default {
     $el: 'div',
     if: '$label',
     attrs: {
-        class: 'text-gray-600 text-sm mb-2',
+        class: '$classes.label',
     },
     children: {
         if: '$required',
@@ -11,7 +11,7 @@ export default {
             {
                 $el: 'span',
                 attrs: {
-                    class: 'ml-0.5 text-red-500',
+                    class: '$classes.asterisk',
                 },
                 children: '*',
             },
