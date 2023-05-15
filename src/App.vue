@@ -9,6 +9,7 @@ const schema = [
         label: 'First Name',
         name: 'firstName',
         help: 'The persons first name',
+        required: true, // renders label with asterisk
         validation: 'required',
     },
     {
@@ -16,6 +17,7 @@ const schema = [
         label: 'How many cups of water?',
         name: 'cupsOfWater',
         help: 'Cups of water you drink in a day',
+        required: true,
         validation: 'required',
     },
     {
@@ -23,6 +25,7 @@ const schema = [
         label: 'Password',
         name: 'password',
         help: 'Choose a secure password',
+        required: true,
         validation: 'required',
     },
     {
@@ -37,7 +40,6 @@ const schema = [
     {
         $formkit: 'checkbox',
         name: 'selectedFruit',
-        label: 'Group Checkbox',
         antProps: {
             options: [
                 { label: 'Apples', value: 'apples' },
@@ -57,7 +59,7 @@ const schema = [
     {
         $formkit: 'radio',
         name: 'favouriteFramework',
-        label: 'Radio',
+        label: 'What is your favourite framework?',
         antProps: {
             options: [
                 { label: 'Vue', value: 'vue' },
@@ -70,7 +72,7 @@ const schema = [
     {
         $formkit: 'radio',
         name: 'favouriteNBATeam',
-        label: 'Favourite NBA Team',
+        label: 'What is your favourite NBA Team?',
         antProps: {
             optionType: 'button',
             options: [
@@ -84,7 +86,7 @@ const schema = [
     {
         $formkit: 'radio',
         name: 'chosenLocation',
-        label: 'Group Radio',
+        label: 'Which Country/City are you currently staying at?',
         antProps: {
             optionType: 'button',
             buttonStyle: 'solid',
@@ -94,6 +96,7 @@ const schema = [
                 { label: 'Vietnam', value: 'vietnam' },
             ],
         },
+        required: true,
         validation: 'required',
     },
     {
@@ -107,6 +110,7 @@ const schema = [
         antProps: {
             format: 'DD/MM/YYYY',
         },
+        required: true,
         validation: 'required',
     },
     {
@@ -120,6 +124,7 @@ const schema = [
         antProps: {
             rows: 5,
         },
+        required: true,
         validation: 'required',
     },
     {
@@ -137,6 +142,7 @@ const schema = [
                 { label: 'Beef Stew', value: 'beef_stew' },
             ],
         },
+        required: true,
         validation: 'required',
     },
     {

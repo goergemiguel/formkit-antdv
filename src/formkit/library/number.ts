@@ -4,7 +4,7 @@ import { customAntInputHandlers } from './handlers'
 
 export default {
     type: 'input',
-    props: ['label', 'antProps'],
+    props: ['label', 'antProps', 'required'],
     schema: withDefaultFormKitSchema([
         {
             $cmp: AntInputNumber,

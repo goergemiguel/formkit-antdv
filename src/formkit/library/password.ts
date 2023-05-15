@@ -3,7 +3,7 @@ import { withDefaultFormKitSchema } from './utils'
 
 export default {
     type: 'input',
-    props: ['label', 'antProps'],
+    props: ['label', 'antProps', 'required'],
     schema: withDefaultFormKitSchema([
         {
             $cmp: AntInputPassword,

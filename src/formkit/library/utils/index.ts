@@ -1,7 +1,7 @@
 import outerElement from '../core/outerElement'
 import wrapperElement from '../core/wrapperElement'
 import innerElement from '../core/innerElement'
-import label from '../core/label'
+import labelText from '../core/labelText'
 import helpText from '../core/helpText'
 import errorList from '../core/errorList'
 
@@ -25,7 +25,7 @@ export const withDefaultFormKitSchema = (
             {
                 ...wrapperElement,
                 children: [
-                    showLabel ? label : {},
+                    showLabel ? labelText : {},
                     {
                         ...innerElement,
                         children: wrapperChildren,
