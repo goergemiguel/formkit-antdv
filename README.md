@@ -20,16 +20,16 @@ This library is an experiment and is in-progress. It combines usage of formkit s
 
 | Ant Component | Support            | Formkit type |
 | ------------- | ------------------ | ------------ |
-| Button        | :white-check-mark: | button       |
-| Checkbox      | :white-check-mark: | checkbox     |
-| CheckboxGroup | :white-check-mark: | checkbox     |
-| Datepicker    | :white-check-mark: | datepicker   |
-| NumberInput   | :white-check-mark: | number       |
-| TextInput     | :white-check-mark: | text         |
-| PasswordInput | :white-check-mark: | password     |
-| TextArea      | :white-check-mark: | textarea     |
-| Radio         | :white-check-mark: | radio        |
-| RadioGroup    | :white-check-mark: | radio        |
-| Switch        | :white-check-mark: | toggle       |
-| Divider       | :white-check-mark: | divider      |
-| Select        | :white-check-mark: | select       |
+| Button        | :white_check_mark: | button       |
+| Checkbox      | :white_check_mark: | checkbox     |
+| CheckboxGroup | :white_check_mark: | checkbox     |
+| Datepicker    | :white_check_mark: | datepicker   |
+| NumberInput   | :white_check_mark: | number       |
+| TextInput     | :white_check_mark: | text         |
+| PasswordInput | :white_check_mark: | password     |
+| TextArea      | :white_check_mark: | textarea     |
+| Radio         | :white_check_mark: | radio        |
+| RadioGroup    | :white_check_mark: | radio        |
+| Switch        | :white_check_mark: | toggle       |
+| Divider       | :white_check_mark: | divider      |
+| Select        | :white_check_mark: | select       |
