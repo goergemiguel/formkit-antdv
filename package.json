@@ -1,8 +1,11 @@
 {
-    "name": "vue3-tailwind",
+    "name": "@goergemiguel/formkit-antdv",
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "files": [
+        "./src/formkit/*"
+    ],
     "scripts": {
         "dev": "vite",
         "build": "vue-tsc && vite build",

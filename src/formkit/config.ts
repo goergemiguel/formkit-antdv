@@ -17,8 +17,8 @@ import {
     right,
 } from '@formkit/icons'
 import theme from './theme'
-
 import library from './library/'
+
 const proPlugins = createProPlugin('fk-2ed9ffbc9', inputs)
 
 const config = defaultConfig({
