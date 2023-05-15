@@ -1,5 +1,4 @@
-import config from './config'
 import theme from './theme'
-import { plugin } from '@formkit/vue'
+import { inputs } from './inputs'
 
-export { config, theme, plugin }
+export { inputs, theme }
