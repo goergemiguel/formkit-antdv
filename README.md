@@ -33,3 +33,45 @@ This library is an experiment and is in-progress. It combines usage of formkit s
 | Switch        | :white_check_mark: | toggle       |
 | Divider       | :white_check_mark: | divider      |
 | Select        | :white_check_mark: | select       |
+
+## Usage
+
+```
+npm install @formkit/vue
+```
+
+main.ts
+
+```
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import { defaultConfig, plugin } from '@formkit/vue'
+import { generateClasses } from '@formkit/themes'
+import { inputs as customInputs, theme } from '@goergemiguel/formkit-antdv/lib'
+
+const config = defaultConfig({
+    config: {
+        classes: generateClasses(theme),
+    },
+    inputs: customInputs,
+})
+
+createApp(App).use(plugin, config).mount('#app')
+```
+
+tailwind.config.js
+
+```
+export default {
+    content: [
+        './index.html',
+        './src/**/*.{vue,js,ts,jsx,tsx}',
+        './node_modules/@goergemiguel/formkit-antdv/lib/theme.ts',
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+}
+```
