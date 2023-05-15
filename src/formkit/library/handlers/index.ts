@@ -1,10 +1,10 @@
-export function customAntInputHandlers(node) {
+export function customAntInputHandlers(node: any) {
     node.on('created', () => {
         Object.assign(node.context.handlers, {
-            toggleInput: (e) => {
+            toggleInput: () => {
                 node.input(!node.value)
             },
-            simpleInput: (e) => {
+            simpleInput: (e: Event) => {
                 node.input(e)
             },
         })

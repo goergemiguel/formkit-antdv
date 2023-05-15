@@ -1,7 +1,6 @@
 import { defaultConfig } from '@formkit/vue'
 import { createProPlugin, inputs } from '@formkit/pro'
 import { generateClasses } from '@formkit/themes'
-
 import {
     arrowDown,
     arrowUp,
@@ -45,9 +44,7 @@ const config = defaultConfig({
         left,
         right,
     },
-    inputs: {
-        ...library,
-    },
+    inputs: library,
 })
 
 export default config

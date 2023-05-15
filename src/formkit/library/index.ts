@@ -10,7 +10,7 @@ import number from './number'
 import password from './/password'
 import divider from './divider'
 
-export default {
+const library = {
     text,
     button,
     checkbox,
@@ -23,3 +23,5 @@ export default {
     password,
     divider,
 }
+
+export default library as any
