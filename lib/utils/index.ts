@@ -4,6 +4,7 @@ import innerElement from '../core/innerElement'
 import labelText from '../core/labelText'
 import helpText from '../core/helpText'
 import errorList from '../core/errorList'
+import makeGridElement from '../core/gridElement'
 
 export interface IOptions {
     showLabel?: boolean
@@ -36,4 +37,11 @@ export const withDefaultFormKitSchema = (
             },
         ],
     }
+}
+
+export const withGrid = (
+    wrapperChildren: any[] | Object,
+    attrs: Object | null
+) => {
+    return makeGridElement(wrapperChildren, attrs)
 }
